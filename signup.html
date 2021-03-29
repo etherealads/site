@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us</title>
+    <base href="/" />
+    <link
+      rel="stylesheet"
+      href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/nav.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="sidebar">
+        <div class="top-row pl-4 navbar navbar-dark">
+          <img width="75px" height="75px" src="/assets/ethlads-75-75.png" />
+          <a class="navbar-brand" href="/">Ethereal</a>
+          <button class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+          <ul class="nav flex-column">
+            <li class="nav-item px-3">
+              <a class="nav-link" href="/" Match="aMatch.All">
+                <span aria-hidden="true"></span> Home
+              </a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="/advertisers.html">
+                <span aria-hidden="true"></span> For Advertisers
+              </a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="/publishers.html">
+                <span aria-hidden="true"></span> For Publishers
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="top-row px-4">
+          <a href="https://dash.etherealads.co/fork" target="_blank">Log In</a>
+          <a href="/contact" target="_blank">Sign Up</a>
+          <a href="/PrivacyPolicy" target="_blank">Privacy</a>
+        </div>
+
+        <div class="content px-4">
+          <form action="https://formspree.io/f/xaylrwvk" method="POST">
+            <div class="form-group">
+              <label for="weburl">Site URL</label>
+              <input type="url" name="weburl" class="form-control" required />
+              <br />
+              <label for="email">Your e-mail</label>
+              <input
+                type="email"
+                name="_replyto"
+                class="form-control"
+                required
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >Don't worry, your data is safe here. We'll never share your
+                email with anyone else.</small
+              >
+              <br />
+              <label for="notes">Anything else?</label>
+              <textarea
+                type="text"
+                name="notes"
+                class="form-control"
+              ></textarea>
+              <br />
+              <input type="text" name="_gotcha" style="display: none" />
+              <button type="submit" class="btn btn-success">OK!</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.6.0/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
